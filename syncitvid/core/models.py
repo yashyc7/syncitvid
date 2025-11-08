@@ -1,7 +1,8 @@
 # rooms/models.py
-from django.db import models
-from django.contrib.auth import get_user_model
 import uuid
+
+from django.contrib.auth import get_user_model
+from django.db import models
 
 User = get_user_model()
 
@@ -17,12 +18,6 @@ class Room(models.Model):
     last_participant_name = models.CharField(max_length=100, blank=True)
     last_participant_leaved_at = models.DateTimeField(blank=True, null=True)
     room_created_at = models.DateTimeField(auto_now_add=True)
-
-    def save(self, *args, **kwargs):
-        if not self.invite_code:
-            import uuid
-            self.invite_code = uuid.uuid4().hex[:8].upper()
-        super().save(*args, **kwargs)
-
+    
     def __str__(self):
         return f"{self.name} ({self.invite_code})"
