@@ -1,48 +1,115 @@
-# syncitvid
+# SyncItVid 🎥
 
-Behold My Awesome Project!
+[![License](https://img.shields.io/github/license/yashyc7/syncitvid)](https://github.com/yashyc7/syncitvid/blob/main/LICENSE)
+[![Python Version](https://img.shields.io/badge/python-3.9%2B-blue)](https://www.python.org/downloads/)
+[![Django Version](https://img.shields.io/badge/django-4.2%2B-green)](https://www.djangoproject.com/)
+[![Issues](https://img.shields.io/github/issues/yashyc7/syncitvid)](https://github.com/yashyc7/syncitvid/issues)
+[![Pull Requests](https://img.shields.io/github/issues-pr/yashyc7/syncitvid)](https://github.com/yashyc7/syncitvid/pulls)
+[![Contributors](https://img.shields.io/github/contributors/yashyc7/syncitvid)](https://github.com/yashyc7/syncitvid/graphs/contributors)
+[![Stars](https://img.shields.io/github/stars/yashyc7/syncitvid)](https://github.com/yashyc7/syncitvid/stargazers)
 
-[![Built with Cookiecutter Django](https://img.shields.io/badge/built%20with-Cookiecutter%20Django-ff69b4.svg?logo=cookiecutter)](https://github.com/cookiecutter/cookiecutter-django/)
-[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
+A real-time peer-to-peer watch together platform that allows users to create virtual rooms and enjoy synchronized video watching experiences with friends and family.
 
-## Settings
+## 🌟 Features
 
-Moved to [settings](https://cookiecutter-django.readthedocs.io/en/latest/1-getting-started/settings.html).
+- Create virtual rooms for synchronized video watching
+- Real-time video playback synchronization
+- Chat functionality during watch sessions
+- Support for multiple video sources
+- Room management with host controls
+- User authentication and profiles
+- Cross-platform compatibility
+- Low-latency peer-to-peer communication
 
-## Basic Commands
+## 🚀 Getting Started
 
-### Setting Up Your Users
+### Prerequisites
 
-- To create a **normal user account**, just go to Sign Up and fill out the form. Once you submit it, you'll see a "Verify Your E-mail Address" page. Go to your console to see a simulated email verification message. Copy the link into your browser. Now the user's email should be verified and ready to go.
+- Python 3.9 or higher
+- Django 4.2 or higher
+- Node.js and npm (for frontend dependencies)
+- Git
 
-- To create a **superuser account**, use this command:
+### Installation
 
-      uv run python manage.py createsuperuser
+1. Clone the repository
+   ```bash
+   git clone https://github.com/yashyc7/syncitvid.git
+   cd syncitvid
+   ```
 
-For convenience, you can keep your normal user logged in on Chrome and your superuser logged in on Firefox (or similar), so that you can see how the site behaves for both kinds of users.
+2. Create and activate a virtual environment
+   ```bash
+   python -m venv venv
+   # On Windows
+   venv\Scripts\activate
+   # On macOS/Linux
+   source venv/bin/activate
+   ```
 
-### Type checks
+3. Install Python dependencies
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-Running type checks with mypy:
+4. Set up environment variables
+   ```bash
+   cp .env.example .env
+   # Edit .env with your configuration
+   ```
 
-    uv run mypy syncitvid
+5. Run migrations
+   ```bash
+   python manage.py migrate
+   ```
 
-### Test coverage
+6. Start the development server
+   ```bash
+   python manage.py runserver
+   ```
 
-To run the tests, check your test coverage, and generate an HTML coverage report:
+Visit `http://localhost:8000` to see the application running.
 
-    uv run coverage run -m pytest
-    uv run coverage html
-    uv run open htmlcov/index.html
+## 🤝 Contributing
 
-#### Running tests with pytest
+We welcome contributions from the community! Here's how you can help:
 
-    uv run pytest
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-### Live reloading and Sass CSS compilation
+Please read our [Contributing Guidelines](CONTRIBUTING.md) for more details.
 
-Moved to [Live reloading and SASS compilation](https://cookiecutter-django.readthedocs.io/en/latest/2-local-development/developing-locally.html#using-webpack-or-gulp).
+### Development Guidelines
 
-## Deployment
+- Follow PEP 8 style guide for Python code
+- Write tests for new features
+- Update documentation when necessary
+- Keep pull requests focused and atomic
+- Add appropriate comments and documentation
+- Follow the existing code structure and patterns
 
-The following details how to deploy this application.
+## 📝 Code of Conduct
+
+Please read our [Code of Conduct](CODE_OF_CONDUCT.md) before contributing to the project.
+
+
+
+## 🙏 Acknowledgments
+
+- Thanks to all contributors who help improve this project
+- Inspired by platforms like [kosmi.io](https://kosmi.io)
+- Built with Django and modern web technologies
+
+## 📞 Contact
+
+If you have any questions or suggestions, feel free to:
+- Open an [issue](https://github.com/yashyc7/syncitvid/issues)
+- Start a [discussion](https://github.com/yashyc7/syncitvid/discussions)
+- Connect with maintainers on [Discord](your-discord-link)
+
+---
+
+⭐ Star this repo if you find it helpful!
