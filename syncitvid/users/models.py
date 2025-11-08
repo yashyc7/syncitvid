@@ -1,4 +1,3 @@
-
 from typing import ClassVar
 
 from django.contrib.auth.models import AbstractUser
@@ -36,3 +35,10 @@ class User(AbstractUser):
 
         """
         return reverse("users:detail", kwargs={"pk": self.id})
+    def save(self,*args,**kwargs):
+        if not self.name and self.email:
+            self.name = self.email.split('@')[0]
+        super().save(*args,**kwargs)
+
+    
+   

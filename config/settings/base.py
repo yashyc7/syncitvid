@@ -1,7 +1,6 @@
 # ruff: noqa: ERA001, E501
 """Base settings to build other settings files upon."""
 
-
 from pathlib import Path
 
 import environ
@@ -48,13 +47,13 @@ LOCALE_PATHS = [str(BASE_DIR / "locale")]
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'syncitvid',          
-        'USER': 'postgres',     
-        'PASSWORD': 'postgres', 
-        'HOST': 'localhost',         
-        'PORT': '5432',              
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "syncitvid",
+        "USER": "postgres",
+        "PASSWORD": "postgres",
+        "HOST": "localhost",
+        "PORT": "5432",
     }
 }
 
@@ -328,18 +327,18 @@ SPECTACULAR_SETTINGS = {
 
 
 SOCIALACCOUNT_PROVIDERS = {
-    'google': {
-        'APP': {
-            'client_id': env('GOOGLE_CLIENT_ID', default='YOUR_GOOGLE_CLIENT_ID'),
-            'secret': env('GOOGLE_CLIENT_SECRET', default='YOUR_GOOGLE_CLIENT_SECRET'),
-            'key': ''
+    "google": {
+        "APP": {
+            "client_id": env("GOOGLE_CLIENT_ID", default="YOUR_GOOGLE_CLIENT_ID"),
+            "secret": env("GOOGLE_CLIENT_SECRET", default="YOUR_GOOGLE_CLIENT_SECRET"),
+            "key": "",
         },
-        'SCOPE': [
-            'profile',
-            'email',
+        "SCOPE": [
+            "profile",
+            "email",
         ],
-        'AUTH_PARAMS': {
-            'access_type': 'online',
-        }   
+        "AUTH_PARAMS": {
+            "access_type": "online",
+        },
     }
 }
