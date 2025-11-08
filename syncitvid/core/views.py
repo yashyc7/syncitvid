@@ -26,7 +26,7 @@ class RoomViewset(viewsets.ModelViewSet):
             )
         serializer = self.get_serializer(data=request.data)
         if serializer.is_valid():
-            serializer.save(host=request.user, invite_code=str(uuid.uuid4()))
+            serializer.save(host=request.user, invite_code=str(uuid.uuid4())[:20])
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
@@ -83,7 +83,9 @@ class RoomViewset(viewsets.ModelViewSet):
         rooms = Room.objects.filter(
             Q(host=request.user) | Q(participant=request.user)
         ).distinct()
-        serializer = RoomSerializer(rooms, many=True)
+        if rooms.count() ==0:
+            return Response({"message":"No rooms exist, Join or create rooms to see the list of available rooms"},status=status.HTTP_200_OK)
+        serializer = RoomSerializer(rooms, many=True,context={"request":request})
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     def retrieve(self, request, pk=None, *args, **kwargs):
