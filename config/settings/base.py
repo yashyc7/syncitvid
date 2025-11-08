@@ -311,7 +311,7 @@ REST_FRAMEWORK = {
 }
 
 # django-cors-headers - https://github.com/adamchainz/django-cors-headers#setup
-CORS_URLS_REGEX = r"^/api/.*$"
+# CORS_URLS_REGEX = r"^/api/.*$"
 
 # By Default swagger ui is available only to admin user(s). You can change permission classes to change that
 # See more configuration options at https://drf-spectacular.readthedocs.io/en/latest/settings.html#settings
@@ -342,3 +342,19 @@ SOCIALACCOUNT_PROVIDERS = {
         },
     }
 }
+
+# Allow your React dev server
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",
+]
+
+# Important: allow cookies (for session auth)
+CORS_ALLOW_CREDENTIALS = True
+
+# If using CSRF
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:5173",
+]
+
+
+LOGIN_REDIRECT_URL = "http://localhost:5173/dashboard"

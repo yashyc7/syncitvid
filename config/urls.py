@@ -19,6 +19,8 @@ urlpatterns = [
     path(settings.ADMIN_URL, admin.site.urls),
     # User management
     path("users/", include("syncitvid.users.urls", namespace="users")),
+    path('dj-rest-auth/', include('dj_rest_auth.urls')),  # REST login/logout/user endpoints
+    
     path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
     # ...
